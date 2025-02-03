@@ -1,0 +1,15 @@
+.button{
+    border: none;
+    padding: 16px 18px;
+    border-radius:10px ;
+    cursor: pointer;
+    background-color: #4A026B;
+    color:white;
+  }
+  .button:hover{
+    background-color: #600A87;
+  }
+  .button:active{
+    background-color: #520B73;
+  }
+  
