@@ -1,5 +1,5 @@
-import { useState } from "react";
 import "./App.css";
+import { useState } from "react";
 import { ExpenseForm } from "./components/expenseForm/expenseForm";
 import { Expenses } from "./components/expenses/expenses";
 import { Modal } from "./components/UI/Modal";
@@ -16,28 +16,25 @@ function App() {
   };
   // функция что бы модалка открывалась и закрывалась
 
-
   function addExpenseHandler(param) {
     const updateExpense = [...expenses, param];
     setExpenses(updateExpense);
-    modalHandler()
+    modalHandler();
   }
   //обновление массива
-
-
 
   const deleteExpenseHandler = (id) => {
     const filteredExpenses = expenses.filter((item) => item.id !== id);
     setExpenses(filteredExpenses);
   };
-// удвление одного объекта
+  // удвление одного объекта
 
   return (
     <div className="container">
       <Modal open={modal} onClose={modalHandler}>
         <ExpenseForm onAdd={addExpenseHandler} />
       </Modal>
-      {!modal && <Button title="Add new consumption" onClick={modalHandler}/>}
+      {!modal && <Button title="Add new consumption" onClick={modalHandler} />}
       <Expenses expenses={expenses} onDelete={deleteExpenseHandler} />
     </div>
   );
